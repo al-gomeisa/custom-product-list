@@ -2,6 +2,7 @@
 
 // Define the `itemsApp` module
 angular.module('itemsApp', [
+    'ngAnimate',
     'ngRoute',
     'core',
     'itemDetail',
