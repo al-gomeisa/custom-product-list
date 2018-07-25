@@ -1,6 +1,10 @@
 'use strict';
 
 // Define the `itemsApp` module
+angular.module('itemsApp', []);
+
+/*
+// Define the `itemsApp` module
 var itemsApp = angular.module('itemsApp', []);
 
 // Define the `ExpListController` controller on the `itemsApp` module
@@ -23,3 +27,4 @@ itemsApp.controller('ExpListController', function ExpListController($scope) {
         }
     ];
 });
+*/

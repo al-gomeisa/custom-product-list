@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 describe('ExpListController', function() {
 
   beforeEach(module('itemsApp'));
@@ -19,3 +20,4 @@ describe('ExpListController', function() {
   }));
 
 });
+*/
