@@ -1,8 +1,8 @@
 'use strict';
 
-// Register `phoneList` component, along with its associated controller and template
+// Register `itemsList` component, along with its associated controller and template
 angular.
-  module('itemsApp').
+  module('itemsList').
   component('itemsList', {
     template:
         '<h3>{{$ctrl.title}}</h3>' +
