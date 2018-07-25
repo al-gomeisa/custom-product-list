@@ -32,10 +32,10 @@ describe('itemsApp Application', function() {
         var itemNameColumn = element.all(by.repeater('item in $ctrl.items').column('item.name'));
 
         function getNames() {
-        return itemNameColumn.map(function(elem) {
-            return elem.getText();
-        });
-      }
+            return itemNameColumn.map(function(elem) {
+                return elem.getText();
+            });
+        }
 
       queryField.sendKeys('tablet');   // Let's narrow the dataset to make the assertions shorter
 
@@ -50,6 +50,14 @@ describe('itemsApp Application', function() {
         'MOTOROLA XOOM\u2122',
         'Motorola XOOM\u2122 with Wi-Fi'
       ]);
+    });
+
+    it('should render item specific links', function() {
+        var query = element(by.model('$ctrl.query'));
+        query.sendKeys('nexus');
+
+        element.all(by.css('.items li a')).first().click();
+        expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
     });
 
   });

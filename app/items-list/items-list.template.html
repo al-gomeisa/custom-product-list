@@ -29,9 +29,12 @@
             <h3>
                 {{$ctrl.title}} --Templated
             </h3>
-            <ul>
-                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-                    <span>{{item.name}}</span>
+            <ul class="phones">
+                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+                    <a href="#/phones/{{item.id}}" class="thumb">
+                        <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" />
+                    </a>
+                    <a href="#/phones/{{item.id}}">{{item.name}}</a>
                     <p>{{item.description}}</p>
                 </li>
             </ul>
