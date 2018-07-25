@@ -3,6 +3,7 @@
 // Define the `itemsApp` module
 angular.module('itemsApp', [
     'ngRoute',
+    'core',
     'itemDetail',
     'itemsList'
 /*
