@@ -8,10 +8,14 @@ describe('itemDetail', function() {
   // Test the controller
   describe('itemDetailController', function() {
     var $httpBackend, ctrl;
+    var xyzPhoneData = {
+      name: 'item xyz',
+      images: ['image/url1.png', 'image/url2.png']
+    };
 
     beforeEach(inject(function($componentController, _$httpBackend_, $routeParams) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('items/xyz.json').respond({name: 'item xyz'});
+      $httpBackend.expectGET('items/xyz.json').respond(xyzPhoneData);
 
       $routeParams.itemId = 'xyz';
 
@@ -22,7 +26,7 @@ describe('itemDetail', function() {
       expect(ctrl.item).toBeUndefined();
 
       $httpBackend.flush();
-      expect(ctrl.item).toEqual({name: 'item xyz'});
+      expect(ctrl.item).toEqual(xyzPhoneData);
     });
 
   });
