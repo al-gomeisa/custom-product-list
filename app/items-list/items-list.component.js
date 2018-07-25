@@ -5,30 +5,15 @@ angular.
     module('itemsList').
     component('itemsList', {
         templateUrl: 'items-list/items-list.template.html',
-        controller: function ExpListController() {
-            this.title = 'Doing ExpListController on Component';
+        controller: ['$http',
+            function ExpListController($http) {
+                var self = this;
+                self.title = 'Doing ExpListController on Component';
+                self.orderProp = 'age';
 
-            this.items = [
-                {
-                    name: 'Item1',
-                    description: 'Item1 being the first one ON COMPONENT.',
-                    age: 1
-                },
-                {
-                    name: 'Nexus S',
-                    description: 'Fast just got faster with Nexus S.',
-                    age: 2
-                }, {
-                    name: 'Motorola XOOM™ with Wi-Fi',
-                    description: 'The Next, Next Generation tablet.',
-                    age: 3
-                }, {
-                    name: 'MOTOROLA XOOM™',
-                    description: 'The Next, Next Generation tablet.',
-                    age: 4
-                }
-            ];
-
-            this.orderProp = 'age';
-        }
+                $http.get('items/items.json').then(function(response) {
+                    self.items = response.data.slice(0, 4);
+                });
+            }
+        ]
     });
