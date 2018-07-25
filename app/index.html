@@ -23,12 +23,26 @@
         <script src="phone-list/phone-list.component.js"></script>
         <script src="phone-detail/phone-detail.module.js"></script>
         <script src="phone-detail/phone-detail.component.js"></script>
+        <!-- <script src="app.experiment.js"></script> -->
     </head>
     <body>
 
         <div class="view-container">
             <div ng-view class="view-frame"></div>
         </div>
+
+    <!--
+        <div ng-controller="ExpListController">
+            <ul ng-repeat="item in items">
+                <span>
+                    {{item.name}}
+                </span>
+                <p>
+                    {{item.description}}
+                </p>
+            </ul>
+        </div>
+    -->
 
     </body>
 </html>
