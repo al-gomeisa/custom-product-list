@@ -2,5 +2,6 @@
 
 // Define the `itemDetail` module
 angular.module('itemDetail', [
-    'ngRoute'
+    'ngRoute',
+    'core.item'
 ]);

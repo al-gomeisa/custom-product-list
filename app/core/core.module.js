@@ -2,4 +2,4 @@
 
 // Define the `core` module
 //angular.module('core', ['core.phone']);
-angular.module('core', []);
+angular.module('core', ['core.item']);

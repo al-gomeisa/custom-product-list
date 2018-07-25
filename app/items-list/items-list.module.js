@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `itemsList` module
-angular.module('itemsList', []);
+angular.module('itemsList', ['core.item']);
