@@ -11,4 +11,11 @@ describe('ExpListController', function() {
     expect(scope.items.length).toBe(4);
   }));
 
+  it('title should be Doing ExpListController', inject(function($controller) {
+    var scope = {};
+    var ctrl = $controller('ExpListController', {$scope: scope});
+
+    expect(scope.title).toBe('Doing ExpListController');
+  }));
+
 });
