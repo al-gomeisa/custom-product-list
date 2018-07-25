@@ -1,0 +1,14 @@
+'use strict';
+
+describe('ExpListController', function() {
+
+  beforeEach(module('phonecatApp'));
+
+  it('should create a `items` model with 4 items', inject(function($controller) {
+    var scope = {};
+    var ctrl = $controller('ExpListController', {$scope: scope});
+
+    expect(scope.items.length).toBe(4);
+  }));
+
+});
