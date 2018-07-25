@@ -1,8 +1,19 @@
-<h3>{{$ctrl.title}} --Templated</h3>
-<ul>
-   <li ng-repeat="item in $ctrl.items">
-     <span>{{item.name}}</span>
-     <p>{{item.description}}</p>
-   </li>
-</ul>
-<p>Total number of items: {{$ctrl.items.length}}</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+        <!--Sidebar content-->
+        Search: <input ng-model="$ctrl.query" />
+        </div>
+        <div class="col-md-10">
+          <!--Body content-->
+            <h3>{{$ctrl.title}} --Templated</h3>
+            <ul>
+                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query">
+                    <span>{{item.name}}</span>
+                    <p>{{item.description}}</p>
+                </li>
+            </ul>
+            <p>Total number of items: {{$ctrl.items.length}}</p>
+        </div>
+    </div>
+</div>
