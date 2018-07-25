@@ -2,19 +2,41 @@
     <div class="row">
         <div class="col-md-2">
         <!--Sidebar content-->
-        Search: <input ng-model="$ctrl.query" />
-        <p>Query: {{$ctrl.query}}</p>
+
+        <p>
+            Search: 
+            <input ng-model="$ctrl.query" />
+        </p>
+
+        <p>
+            Query: {{$ctrl.query}}
+        </p>
+
+        <p>
+            Sort by:
+            <select ng-model="$ctrl.orderProp">
+                <option value="age">Newest</option>
+                <option value="-age">Oldest</option>
+                <option value="name">Alphabetical-Name</option>
+                <option value="description">Alphabetical - Description</option>
+            </select>
+        </p>
+
         </div>
         <div class="col-md-10">
-          <!--Body content-->
-            <h3>{{$ctrl.title}} --Templated</h3>
+            <!--Body content-->
+
+            <h3>
+                {{$ctrl.title}} --Templated
+            </h3>
             <ul>
-                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query">
+                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp">
                     <span>{{item.name}}</span>
                     <p>{{item.description}}</p>
                 </li>
             </ul>
             <p>Total number of items: {{$ctrl.items.length}}</p>
+
         </div>
     </div>
 </div>
