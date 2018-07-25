@@ -2,7 +2,7 @@
 
 describe('ExpListController', function() {
 
-  beforeEach(module('phonecatApp'));
+  beforeEach(module('itemsApp'));
 
   it('should create a `items` model with 4 items', inject(function($controller) {
     var scope = {};

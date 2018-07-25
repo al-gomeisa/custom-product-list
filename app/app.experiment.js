@@ -1,10 +1,10 @@
 'use strict';
 
-// Define the `phonecatApp` module
-var phonecatApp = angular.module('phonecatApp', []);
+// Define the `itemsApp` module
+var itemsApp = angular.module('itemsApp', []);
 
-// Define the `PhoneListController` controller on the `phonecatApp` module
-phonecatApp.controller('ExpListController', function ExpListController($scope) {
+// Define the `ExpListController` controller on the `itemsApp` module
+itemsApp.controller('ExpListController', function ExpListController($scope) {
     $scope.title = 'Doing ExpListController';
     $scope.items = [
         {
