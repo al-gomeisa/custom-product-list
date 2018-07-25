@@ -3,7 +3,31 @@
 // Angular E2E Testing Guide:
 // https://docs.angularjs.org/guide/e2e-testing
 
+describe('itemsApp Application', function() {
 
+  describe('itemsList', function() {
+
+    beforeEach(function() {
+      browser.get('index.html');
+    });
+
+    it('should filter the items list as a user types into the search box', function() {
+      var itemsList = element.all(by.repeater('item in $ctrl.items'));
+      var query = element(by.model('$ctrl.query'));
+
+      expect(itemsList.count()).toBe(4);
+
+      query.sendKeys('nexus');
+      expect(itemsList.count()).toBe(1);
+
+      query.clear();
+      query.sendKeys('motorola');
+      expect(itemsList.count()).toBe(2);
+    });
+
+  });
+
+});
 
 /*
 describe('PhoneCat Application', function() {
