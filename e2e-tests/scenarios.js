@@ -62,18 +62,18 @@ describe('itemsApp Application', function() {
             query.sendKeys('nexus');
 
             element.all(by.css('.items li a')).first().click();
-            expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
+            expect(browser.getLocationAbsUrl()).toBe('/items/nexus-s');
         });
     });
 
-    describe('View: Phone details', function() {
+    describe('View: Item detail', function() {
 
         beforeEach(function() {
             browser.get('index.html#!/items/nexus-s');
         });
 
-        it('should display placeholder page with `itemId`', function() {
-            expect(element(by.binding('$ctrl.itemId')).getText()).toBe('nexus-s');
+        it('should display `nexus-s` page with `itemId`', function() {
+            expect(element(by.binding('$ctrl.item.name')).getText()).toBe('Nexus S');
         });
 
     });
