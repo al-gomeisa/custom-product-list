@@ -3,7 +3,7 @@
 describe('itemsList', function() {
 
   // Load the module that contains the `itemsApp` component before each test
-  beforeEach(module('itemsApp'));
+  beforeEach(module('itemsList'));
 
   // Test the controller
   describe('ExpListController', function() {
