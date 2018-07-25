@@ -5,62 +5,78 @@
 
 describe('itemsApp Application', function() {
 
-  describe('itemsList', function() {
-
-    beforeEach(function() {
-      browser.get('index.html');
+    it('should redirect `index.html` to `index.html#!/items', function() {
+        browser.get('index.html');
+        expect(browser.getLocationAbsUrl()).toBe('/items');
     });
 
-    it('should filter the items list as a user types into the search box', function() {
-      var itemsList = element.all(by.repeater('item in $ctrl.items'));
-      var query = element(by.model('$ctrl.query'));
+    describe('View: Items List', function() {
 
-      expect(itemsList.count()).toBe(4);
+        beforeEach(function() {
+          browser.get('index.html#!/items');
+        });
 
-      query.sendKeys('nexus');
-      expect(itemsList.count()).toBe(1);
+        it('should filter the items list as a user types into the search box', function() {
+          var itemsList = element.all(by.repeater('item in $ctrl.items'));
+          var query = element(by.model('$ctrl.query'));
 
-      query.clear();
-      query.sendKeys('motorola');
-      expect(itemsList.count()).toBe(2);
+          expect(itemsList.count()).toBe(4);
+
+          query.sendKeys('nexus');
+          expect(itemsList.count()).toBe(1);
+
+          query.clear();
+          query.sendKeys('motorola');
+          expect(itemsList.count()).toBe(2);
+        });
+
+        it('should be possible to control item order via the drop-down menu', function() {
+            var queryField = element(by.model('$ctrl.query'));
+            var orderSelect = element(by.model('$ctrl.orderProp'));
+            var nameOption = orderSelect.element(by.css('option[value="name"]'));
+            var itemNameColumn = element.all(by.repeater('item in $ctrl.items').column('item.name'));
+
+            function getNames() {
+                return itemNameColumn.map(function(elem) {
+                    return elem.getText();
+                });
+            }
+
+          queryField.sendKeys('tablet');   // Let's narrow the dataset to make the assertions shorter
+
+          expect(getNames()).toEqual([
+            'Motorola XOOM\u2122 with Wi-Fi',
+            'MOTOROLA XOOM\u2122'
+          ]);
+
+          nameOption.click();
+
+          expect(getNames()).toEqual([
+            'MOTOROLA XOOM\u2122',
+            'Motorola XOOM\u2122 with Wi-Fi'
+          ]);
+        });
+
+        it('should render item specific links', function() {
+            var query = element(by.model('$ctrl.query'));
+            query.sendKeys('nexus');
+
+            element.all(by.css('.items li a')).first().click();
+            expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
+        });
     });
 
-    it('should be possible to control item order via the drop-down menu', function() {
-        var queryField = element(by.model('$ctrl.query'));
-        var orderSelect = element(by.model('$ctrl.orderProp'));
-        var nameOption = orderSelect.element(by.css('option[value="name"]'));
-        var itemNameColumn = element.all(by.repeater('item in $ctrl.items').column('item.name'));
+    describe('View: Phone details', function() {
 
-        function getNames() {
-            return itemNameColumn.map(function(elem) {
-                return elem.getText();
-            });
-        }
+        beforeEach(function() {
+            browser.get('index.html#!/items/nexus-s');
+        });
 
-      queryField.sendKeys('tablet');   // Let's narrow the dataset to make the assertions shorter
+        it('should display placeholder page with `itemId`', function() {
+            expect(element(by.binding('$ctrl.itemId')).getText()).toBe('nexus-s');
+        });
 
-      expect(getNames()).toEqual([
-        'Motorola XOOM\u2122 with Wi-Fi',
-        'MOTOROLA XOOM\u2122'
-      ]);
-
-      nameOption.click();
-
-      expect(getNames()).toEqual([
-        'MOTOROLA XOOM\u2122',
-        'Motorola XOOM\u2122 with Wi-Fi'
-      ]);
     });
-
-    it('should render item specific links', function() {
-        var query = element(by.model('$ctrl.query'));
-        query.sendKeys('nexus');
-
-        element.all(by.css('.items li a')).first().click();
-        expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
-    });
-
-  });
 
 });
 

@@ -26,19 +26,29 @@
         <script src="phone-detail/phone-detail.component.js"></script>
     -->
         <script src="app.module.js"></script>
+        <script src="app.config.js"></script>
         <!-- <script src="app.experiment.js"></script> -->
+        
         <script src="items-list/items-list.module.js"></script>
         <script src="items-list/items-list.component.js"></script>
+        <script src="item-detail/item-detail.module.js"></script>
+        <script src="item-detail/item-detail.component.js"></script>
     </head>
     <body>
-
+        
+    <!--
         <div class="view-container">
             <div ng-view class="view-frame"></div>
         </div>
+    -->
 
         <!-- Use a custom component to render a list of items -->
-        <items-list></items-list>
-        <items-list></items-list>
+        <!--
+            <items-list></items-list>
+            <items-list></items-list>
+        -->
+
+        <div ng-view></div>
 
     </body>
 </html>
