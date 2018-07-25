@@ -1,0 +1,8 @@
+<h3>{{$ctrl.title}} --Templated</h3>
+<ul>
+   <li ng-repeat="item in $ctrl.items">
+     <span>{{item.name}}</span>
+     <p>{{item.description}}</p>
+   </li>
+</ul>
+<p>Total number of items: {{$ctrl.items.length}}</p>
