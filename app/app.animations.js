@@ -9,7 +9,6 @@ angular.
     };
 
     function animateIn(element, className, done) {
-        console.log('animatein');
           if (className !== 'selected') return;
 
           element.css({
@@ -29,12 +28,12 @@ angular.
           }, 500, done);
 
       return function animateInEnd(wasCanceled) {
+        console.log('animateIN, wasCanceled?', wasCanceled);
         if (wasCanceled) element.stop();
       };
     }
 
     function animateOut(element, className, done) {
-        console.log('animateOUT');
      // if (className !== 'selected') return;
 
       element/*.css({
@@ -50,6 +49,7 @@ angular.
       }, 300, done);
 
       return function animateOutEnd(wasCanceled) {
+        console.log('animateOUT, wasCanceled?', wasCanceled);
         if (wasCanceled) element.stop();
       };
     }

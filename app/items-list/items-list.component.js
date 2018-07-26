@@ -11,9 +11,9 @@ angular.
                 self.items = Item.query();
                 self.title = 'Doing ExpListController on Component';
                 self.orderProp = 'age';
+                self.isDetailViewOpen = false;
 
                 self.setListImage = function setListImage(imageUrl) {
-                    console.log('hover doing, imageUrl:', imageUrl);
                     self.mainImageUrl = imageUrl;
                 };
 
@@ -23,7 +23,15 @@ angular.
                 }
 
                 self.hidePopOver = function hidePopOver() {
-                    self.popOverIsVisible = false;
+                    if (!self.isDetailViewOpen) {
+                        self.popOverIsVisible = false;
+                    }
+                }
+
+                self.setDetailView = function setDetailView(imageUrl) {
+                    self.isDetailViewOpen = true;
+                    self.mainImageUrl = imageUrl;
+                    self.popOverIsVisible = true;
                 }
 
                 /*
