@@ -30,22 +30,23 @@ describe('itemsList', function() {
             expect(ctrl.orderProp).toBe('age');
         });
 
-  // Test the controller
-  describe('ExpListController', function() {
-    var ctrl;
+      // Test the controller
+      describe('ExpListController', function() {
+        var ctrl;
 
-    beforeEach(inject(function($componentController) {
-        ctrl = $componentController('itemsList');
-    }));
+        beforeEach(inject(function($componentController) {
+            ctrl = $componentController('itemsList');
+        }));
 
-    it('should create a `items` model with 4 phones', function() {
-        expect(ctrl.items.length).toBe(4);
+        it('should create a `items` model with 6 phones', function() {
+            expect(ctrl.items.length).toBe(6);
+        });
+
+        it('should set a default value for the `orderProp` model', function() {
+            expect(ctrl.orderProp).toBe('age');
+        });
+
+      });
+
     });
-
-    it('should set a default value for the `orderProp` model', function() {
-        expect(ctrl.orderProp).toBe('age');
-    });
-
-  });
-
 });
