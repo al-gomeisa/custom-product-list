@@ -21,14 +21,6 @@
                 <option value="description">Alphabetical - Description</option>
             </select>
         </p>
-    <!--
-        <div class="phone-images item-details item-popover">
-            <img ng-src="{{item.imageUrl}}" class="phone"
-                ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
-                ng-repeat="item in $ctrl.items" 
-            />
-        </div>
-    -->
 
         </div>
         <div class="col-md-10">
@@ -57,7 +49,7 @@
             <p>Total number of items: {{$ctrl.items.length}}</p>
 
         </div>
-        <div class="phone-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible}">
+        <div class="phone-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
             <button class="close" type="button" ng-click="$ctrl.closeDetailView()">×</button>
             <div class="row">
                 <div class="col-md-4">
@@ -66,7 +58,7 @@
                         ng-repeat="item in $ctrl.items" 
                     />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 item-detail-description">
                     <p>Click for settings</p>
                 </div>
             </div>

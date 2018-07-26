@@ -93,3 +93,7 @@ h1 {
   font-size: 1.2em;
   font-weight: bold;
 }
+
+.item-detail-description {
+  background-color: rgba(201, 76, 76, 0.3);
+}

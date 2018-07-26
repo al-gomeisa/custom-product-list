@@ -76,6 +76,10 @@
   /*transform: translate(-50%, -50%);*/
 }
 
+.item-popover.detail-active {
+  opacity: 1;
+  animation: .5s fade-in;
+}
 
 @keyframes fade-in {
   from { opacity: 0; }
