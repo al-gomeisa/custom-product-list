@@ -38,9 +38,11 @@ h1 {
   width: 400px;
 }
 
+/*
 .phone:first-child {
   display: block;
 }
+*/
 
 .phone-images {
   background-color: white;

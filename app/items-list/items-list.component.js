@@ -13,9 +13,18 @@ angular.
                 self.orderProp = 'age';
 
                 self.setListImage = function setListImage(imageUrl) {
-                  console.log('hover doing, imageUrl:', imageUrl);
+                    console.log('hover doing, imageUrl:', imageUrl);
                     self.mainImageUrl = imageUrl;
                 };
+
+                self.showPopOver = function showPopOver(imageUrl) {
+                    self.mainImageUrl = imageUrl;
+                    self.popOverIsVisible = true;
+                }
+
+                self.hidePopOver = function hidePopOver() {
+                    self.popOverIsVisible = false;
+                }
 
                 /*
                 $http.get('items/items.json').then(function(response) {
