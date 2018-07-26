@@ -58,6 +58,7 @@
 
         </div>
         <div class="phone-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible}">
+            <button class="close" type="button" ng-click="$ctrl.closeDetailView()">×</button>
             <div class="row">
                 <div class="col-md-4">
                     <img ng-src="{{item.imageUrl}}" class="phone"

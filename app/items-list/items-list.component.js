@@ -18,8 +18,10 @@ angular.
                 };
 
                 self.showPopOver = function showPopOver(imageUrl) {
-                    self.mainImageUrl = imageUrl;
-                    self.popOverIsVisible = true;
+                    if (!self.isDetailViewOpen) {
+                        self.mainImageUrl = imageUrl;
+                        self.popOverIsVisible = true;
+                    }
                 }
 
                 self.hidePopOver = function hidePopOver() {
@@ -32,6 +34,11 @@ angular.
                     self.isDetailViewOpen = true;
                     self.mainImageUrl = imageUrl;
                     self.popOverIsVisible = true;
+                }
+
+                self.closeDetailView = function closeDetailView() {
+                    self.isDetailViewOpen = false;
+                    self.popOverIsVisible = false;
                 }
 
                 /*
