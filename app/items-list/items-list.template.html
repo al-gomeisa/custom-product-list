@@ -22,6 +22,12 @@
             </select>
         </p>
 
+        <div class="item-details">
+            <img ng-src="{{item.imageUrl}}" class="phone"
+                ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl}"
+                ng-repeat="item in $ctrl.items" />
+        </div>
+
         </div>
         <div class="col-md-10">
             <!--Body content-->
@@ -32,7 +38,7 @@
             <ul class="phones">
                 <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail phone-list-item">
                     <a href="#!/items/{{item.id}}" class="thumb">
-                        <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" />
+                        <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" ng-mouseover="$ctrl.setListImage(item.imageUrl)" />
                     </a>
                     <a href="#!/items/{{item.id}}">{{item.name}}</a>
                     <p>{{item.description}}</p>

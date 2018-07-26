@@ -7,10 +7,15 @@ angular.
         templateUrl: 'items-list/items-list.template.html',
         controller: ['Item',
             function ExpListController(Item) {
-               // var self = this;
-                this.items = Item.query();
-                this.title = 'Doing ExpListController on Component';
-                this.orderProp = 'age';
+                var self = this;
+                self.items = Item.query();
+                self.title = 'Doing ExpListController on Component';
+                self.orderProp = 'age';
+
+                self.setListImage = function setListImage(imageUrl) {
+                  console.log('hover doing, imageUrl:', imageUrl);
+                    self.mainImageUrl = imageUrl;
+                };
 
                 /*
                 $http.get('items/items.json').then(function(response) {
