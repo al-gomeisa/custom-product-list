@@ -8,10 +8,18 @@ angular.
         controller: ['Item',
             function ExpListController(Item) {
                 var self = this;
-                self.items = Item.query();
+                var orirginalItemsLength;
+                self.items = Item.query(function (result) {
+                    orirginalItemsLength = result.length;
+                    self.itemsLength = result.length;
+                    console.log(result.length, result[0]);
+                });
+              //  var orirginalItemsLength = self.items.length;
+                console.log(orirginalItemsLength, ', self.items: ', self.items[0]);
                 self.title = 'Doing ExpListController on Component';
                 self.orderProp = 'age';
                 self.isDetailViewOpen = false;
+                self.demoImages = [1, 2, 3, 4, 5, 6, 7, 8];
 
                 self.setListImage = function setListImage(imageUrl) {
                     self.mainImageUrl = imageUrl;
@@ -40,6 +48,23 @@ angular.
                     self.isDetailViewOpen = false;
                     self.popOverIsVisible = false;
                 }
+
+                self.loadMore = function loadMore() {
+                    var last = self.demoImages[self.demoImages.length - 1];
+
+                    for (var i = 1; i <= 8; i++) {
+                      self.demoImages.push(last + i);
+                    }
+                };
+
+                self.loadMoreItems = function loadMoreItems() {
+                    console.log('orirginalItemsLength:', orirginalItemsLength, self.items[0]);
+                    var last = self.items[self.items.length - 1];
+
+                    for (var i = 1; i < orirginalItemsLength; i++) {
+                        self.items.push(self.items[i]);
+                    }
+                };
 
                 /*
                 $http.get('items/items.json').then(function(response) {

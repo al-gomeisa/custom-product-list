@@ -23,25 +23,23 @@
         </p>
 
         </div>
-        <div class="col-md-10">
+        <div id="itemlist" class="col-md-10" style="overflow: auto;">
             <!--Body content-->
 
             <h3>
                 {{$ctrl.title}} --Templated
             </h3>
-            <ul class="phones">
+            <ul class="phones" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-distance="3" infinite-scroll-container="'#itemlist'">
                 <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp" 
                     class="thumbnail phone-list-item"
                     ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
                     ng-mouseleave="$ctrl.hidePopOver()"
                     ng-click="$ctrl.setDetailView(item.imageUrl)"
-                    style="cursor: pointer;" 
+                    style="cursor: pointer;"
                 >
-                    <!-- <a href="#!/items/{{item.id}}" class="thumb"> -->
-                        <img class="thumb" 
-                            ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
-                         />
-                    <!-- </a> -->
+                    <img class="thumb" 
+                        ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
+                     />
                     <h4>{{item.name}}</h4>
                     <p>{{item.description}}</p>
                 </li>
@@ -61,6 +59,14 @@
                 <div class="col-md-6 item-detail-description">
                     <p>Click for settings</p>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>INFINIT scroll below:</p>
+            <div infinite-scroll="$ctrl.loadMore()" infinite-scroll-distance="3">
+                <img ng-repeat='image in $ctrl.demoImages' ng-src='http://placehold.it/225x250&text={{image}}'>
             </div>
         </div>
     </div>

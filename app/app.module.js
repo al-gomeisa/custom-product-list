@@ -4,6 +4,7 @@
 angular.module('itemsApp', [
     'ngAnimate',
     'ngRoute',
+    'infinite-scroll',
     'core',
     'itemDetail',
     'itemsList'

@@ -28,7 +28,7 @@ angular.
           }, 500, done);
 
       return function animateInEnd(wasCanceled) {
-        console.log('animateIN, wasCanceled?', wasCanceled);
+       // console.log('animateIN, wasCanceled?', wasCanceled);
         if (wasCanceled) element.stop();
       };
     }
@@ -49,7 +49,7 @@ angular.
       }, 300, done);
 
       return function animateOutEnd(wasCanceled) {
-        console.log('animateOUT, wasCanceled?', wasCanceled);
+        //console.log('animateOUT, wasCanceled?', wasCanceled);
         if (wasCanceled) element.stop();
       };
     }
