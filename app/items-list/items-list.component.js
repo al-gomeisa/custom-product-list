@@ -60,10 +60,29 @@ angular.
                 self.loadMoreItems = function loadMoreItems() {
                     console.log('orirginalItemsLength:', orirginalItemsLength, self.items[0]);
                     var last = self.items[self.items.length - 1];
+                    var newItem = {
+                        "age": orirginalItemsLength,
+                        "id": "item-" + orirginalItemsLength, 
+                        "imageUrl": "img/phones-" + orirginalItemsLength + ".0.jpg", 
+                        "name": "Item " + (orirginalItemsLength + 1), 
+                        "description": "Description " + (orirginalItemsLength + 1)
+                    };
 
-                    for (var i = 1; i < orirginalItemsLength; i++) {
-                        self.items.push(self.items[i]);
+                  //  self.items.push(newItem);
+                    
+                    for (var i = 0; i < orirginalItemsLength; i++) {
+                       // self.items.push(self.items[i]);
+                        self.items.push(
+                            {
+                                "age": orirginalItemsLength + i,
+                                "id": "item-" + orirginalItemsLength + i, 
+                                "imageUrl": "img/phones-" + (orirginalItemsLength + i) + ".0.jpg", 
+                                "name": "Item " + (orirginalItemsLength + i + 1), 
+                                "description": "Description " + (orirginalItemsLength + i + 1)
+                            }
+                        );
                     }
+                    
                 };
 
                 /*
