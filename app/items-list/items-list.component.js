@@ -50,6 +50,7 @@ angular.
                 }
 
                 self.loadMore = function loadMore() {
+                    console.log('LoadmoreDEFA');
                     var last = self.demoImages[self.demoImages.length - 1];
 
                     for (var i = 1; i <= 8; i++) {
@@ -58,8 +59,10 @@ angular.
                 };
 
                 self.loadMoreItems = function loadMoreItems() {
-                    console.log('orirginalItemsLength:', orirginalItemsLength, self.items[0]);
+                    //console.log('orirginalItemsLength:', orirginalItemsLength, self.items[0]);
+                    var actualItemsLength = self.items.length;
                     var last = self.items[self.items.length - 1];
+                    console.log('last: ', self.items.length);
                     var newItem = {
                         "age": orirginalItemsLength,
                         "id": "item-" + orirginalItemsLength, 
@@ -74,11 +77,11 @@ angular.
                        // self.items.push(self.items[i]);
                         self.items.push(
                             {
-                                "age": orirginalItemsLength + i,
-                                "id": "item-" + orirginalItemsLength + i, 
-                                "imageUrl": "img/phones-" + (orirginalItemsLength + i) + ".0.jpg", 
-                                "name": "Item " + (orirginalItemsLength + i + 1), 
-                                "description": "Description " + (orirginalItemsLength + i + 1)
+                                "age": actualItemsLength + i,
+                                "id": "item-" + actualItemsLength + i, 
+                                "imageUrl": "img/phones-" + (actualItemsLength + i) + ".0.jpg", 
+                                "name": "Item " + (actualItemsLength + i + 1), 
+                                "description": "Description " + (actualItemsLength + i + 1)
                             }
                         );
                     }

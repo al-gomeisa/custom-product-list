@@ -29,8 +29,8 @@
             <h3>
                 {{$ctrl.title}} --Templated
             </h3>
-            <ul class="phones" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-distance="3"  infinite-scroll-container="'#itemlist'">
-                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp" 
+            <ul class="phones" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-distance="0">
+                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
                     class="thumbnail phone-list-item"
                     ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
                     ng-mouseleave="$ctrl.hidePopOver()"
@@ -63,6 +63,7 @@
             </div>
         </div>
     </div>
+<!--
     <div class="row">
         <div class="col-md-12">
             <p>INFINIT scroll below:</p>
@@ -71,4 +72,5 @@
             </div>
         </div>
     </div>
+-->
 </div>
