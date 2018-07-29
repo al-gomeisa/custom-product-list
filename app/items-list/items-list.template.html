@@ -23,30 +23,31 @@
         </p>
 
         </div>
-        <div id="itemlist" class="col-md-10" style="overflow: auto;">
+        <div ng-scrollbars id="itemlist" class="col-md-10 content">
             <!--Body content-->
 
             <h3>
                 {{$ctrl.title}} --Templated
             </h3>
-            <ul class="phones" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-distance="0">
-                <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
-                    class="thumbnail phone-list-item"
-                    ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
-                    ng-mouseleave="$ctrl.hidePopOver()"
-                    ng-click="$ctrl.setDetailView(item.imageUrl)"
-                    style="cursor: pointer;"
-                >
-                    <img class="thumb" 
-                        ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
-                     />
-                    <h4>{{item.name}}</h4>
-                    <p>{{item.description}}</p>
-                </li>
-            </ul>
-            
             <p>Total number of items: {{$ctrl.items.length}}</p>
-
+            <div style="border-width: 5px; border-style: solid; overflow-y: scroll; height: 700px" class="itemlist-wrapper">
+                <ul class="phones" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
+                    <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+                        class="thumbnail phone-list-item"
+                        ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
+                        ng-mouseleave="$ctrl.hidePopOver()"
+                        ng-click="$ctrl.setDetailView(item.imageUrl)"
+                        style="cursor: pointer;"
+                    >
+                        <img class="thumb" 
+                            ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
+                         />
+                        <h4>{{item.name}}</h4>
+                        <p>{{item.description}}</p>
+                    </li>
+                </ul>
+            </div>
+            
         </div>
         <div class="phone-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
             <button class="close" type="button" ng-click="$ctrl.closeDetailView()">×</button>

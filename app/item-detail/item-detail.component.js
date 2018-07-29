@@ -13,10 +13,6 @@ angular.
                     self.mainImageUrl = imageUrl;
                 };
 
-                self.onDblclick = function onDblclick(imageUrl) {
-                  console.log('You double-clicked image per STEP12": ' + imageUrl);
-                };
-
                 self.item = Item.get({itemId: $routeParams.itemId}, function(item) {
                   self.setImage(item.images[0]);
                 });

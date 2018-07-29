@@ -75,6 +75,7 @@ angular.
                     
                     for (var i = 0; i < orirginalItemsLength; i++) {
                        // self.items.push(self.items[i]);
+                        /*
                         self.items.push(
                             {
                                 "age": actualItemsLength + i,
@@ -82,6 +83,16 @@ angular.
                                 "imageUrl": "img/phones-" + (actualItemsLength + i) + ".0.jpg", 
                                 "name": "Item " + (actualItemsLength + i + 1), 
                                 "description": "Description " + (actualItemsLength + i + 1)
+                            }
+                        );
+                        */
+                        self.items.push(
+                            {
+                                "age": actualItemsLength + i,
+                                "id": "item-" + actualItemsLength + i, 
+                                "imageUrl": self.items[i].imageUrl,
+                                "name": self.items[i].name,
+                                "description": self.items[i].description
                             }
                         );
                     }
