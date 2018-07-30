@@ -32,8 +32,8 @@
             <p>Total number of items: {{$ctrl.items.length}}</p>
             <div style="border-width: 5px; border-style: solid; overflow-y: scroll; height: 700px" class="itemlist-wrapper">
                 <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
-                    <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
-                        class="thumbnail item-list-item"
+                    <li class="thumbnail item-list-item"
+                        ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
                         ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
                         ng-mouseleave="$ctrl.hidePopOver()"
                         ng-click="$ctrl.setDetailView(item.imageUrl)"
@@ -54,14 +54,16 @@
             <button class="close" type="button" ng-click="$ctrl.closeDetailView()">×</button>
             <div class="row">
                 <div class="col-md-3 item-detail-overview">
-                    <img ng-src="{{item.imageUrl}}" class="item"
-                        ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
+                    <img class="item"
                         ng-repeat="item in $ctrl.items" 
+                        ng-src="{{item.imageUrl}}"
+                        ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
+                        alt="{{item.name}}"
                     />
                 </div>
-                <div class="col-md-9 item-detail-description"
+                <div class="col-md-9 item item-detail-description"
+                    ng-repeat="item in $ctrl.items"
                     ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
-                    ng-repeat="item in $ctrl.items" 
                     ng-show="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
                 >
                     <h4>{{item.name}}</h4>
