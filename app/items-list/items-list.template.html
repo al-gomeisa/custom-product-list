@@ -2,26 +2,23 @@
     <div class="row">
         <div class="col-md-2">
         <!--Sidebar content-->
+            <div class="form-group">
+                <label for="search">Search: </label>
+                    <input type="text" class="form-control" id="search" ng-model="$ctrl.query" />
+            <!--
+                <p>
+                    Query: {{$ctrl.query}}
+                </p>
+            -->
 
-        <p>
-            Search: 
-            <input ng-model="$ctrl.query" />
-        </p>
-
-        <p>
-            Query: {{$ctrl.query}}
-        </p>
-
-        <p>
-            Sort by:
-            <select ng-model="$ctrl.orderProp">
-                <option value="age">Newest</option>
-                <option value="-age">Oldest</option>
-                <option value="name">Alphabetical-Name</option>
-                <option value="description">Alphabetical - Description</option>
-            </select>
-        </p>
-
+                <label for="sort">Sort by: </label>
+                    <select class="form-control" id="sort" ng-model="$ctrl.orderProp">
+                        <option value="age">Newest</option>
+                        <option value="-age">Oldest</option>
+                        <option value="name">Alphabetical-Name</option>
+                        <option value="description">Alphabetical - Description</option>
+                    </select>
+            </div>
         </div>
         <div ng-scrollbars id="itemlist" class="col-md-10 content">
             <!--Body content-->
@@ -37,6 +34,7 @@
                         ng-mouseover="$ctrl.showPopOver(item)"
                         ng-mouseleave="$ctrl.hidePopOver()"
                         ng-click="$ctrl.setDetailView(item)"
+                        title="Please click to select details"
                         style="cursor: pointer;"
                     >
                         <img class="thumb" 
@@ -50,8 +48,7 @@
             
         </div>
         <div class="item-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
-            <p>Click for settings</p>
-            <button class="close" type="button" ng-click="$ctrl.closeDetailView()">×</button>
+            <button class="close" type="button" title="Close Window" ng-click="$ctrl.closeDetailView()">×</button>
             <div class="row">
                 <div class="col-md-3 item-detail-overview">
                     <img class="item"
@@ -61,6 +58,26 @@
                         ng-show="item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible && item.id === $ctrl.activeItemId"
                         alt="{{item.name}}"
                     />
+                    <div ng-hide="$ctrl.isDetailViewOpen">Click to Select Details</div>
+                    <div ng-show="$ctrl.isDetailViewOpen">
+                        <div class="form-group">
+                            <label for="selectcolor">Select Color:</label>
+                            <select class="form-control" id="selectcolor" ng-model="">
+                                <option value="age">Color 1</option>
+                                <option value="-age">Color 2</option>
+                                <option value="name">Color 3</option>
+                                <option value="description">Color 4</option>
+                            </select>
+                            <label for="selectsize">Select Size:</label>
+                            <select class="form-control" id="selectsize" ng-model="">
+                                <option value="age">Size 1</option>
+                                <option value="-age">Size 2</option>
+                                <option value="name">Size 3</option>
+                                <option value="description">Size 4</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" type="submit" ng-show="$ctrl.isDetailViewOpen">Add to cart</button>
+                    </div>
                 </div>
                 <div class="col-md-9 item-detail-description"
                     ng-repeat="item in $ctrl.items"
