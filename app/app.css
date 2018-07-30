@@ -29,13 +29,13 @@ h1 {
 /* View: item detail */
 .phone, .item {
   background-color: white;
-  display: none;
+  /*display: none;*/
   float: left;
-  height: 200px; /* 400px; */
+  height: 200px;
   margin-bottom: 2em;
   margin-right: 3em;
   padding: 2em;
-  width: 200px; /*400px;*/
+  width: 200px;
 }
 
 /*

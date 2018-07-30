@@ -8,14 +8,14 @@
     }, 
     {
         "age": 1, 
-        "id": "motorola-xoom-with-wi-fi", 
+        "id": "item-1", 
         "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
         "name": "Motorola XOOM\u2122 with Wi-Fi", 
         "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
     }, 
     {
         "age": 2, 
-        "id": "motorola-xoom", 
+        "id": "item-2", 
         "imageUrl": "img/phones/motorola-xoom.0.jpg", 
         "name": "MOTOROLA XOOM\u2122", 
         "description": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
@@ -23,14 +23,14 @@
     {
         "age": 3, 
         "carrier": "AT&T", 
-        "id": "motorola-atrix-4g", 
+        "id": "item-3", 
         "imageUrl": "img/phones/motorola-atrix-4g.0.jpg", 
         "name": "MOTOROLA ATRIX\u2122 4G", 
         "description": "MOTOROLA ATRIX 4G the world's most powerful smartphone."
     }, 
     {
         "age": 4, 
-        "id": "dell-streak-7", 
+        "id": "item-4", 
         "imageUrl": "img/phones/dell-streak-7.0.jpg", 
         "name": "Dell Streak 7", 
         "description": "Introducing Dell\u2122 Streak 7. Share photos, videos and movies together. It\u2019s small enough to carry around, big enough to gather around."

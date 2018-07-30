@@ -19,13 +19,15 @@ angular.
                 self.isDetailViewOpen = false;
                 self.demoImages = [1, 2, 3, 4, 5, 6, 7, 8];
 
-                self.setListImage = function setListImage(imageUrl) {
-                    self.mainImageUrl = imageUrl;
+                self.setListImage = function setListImage(activeItem) {
+                    self.mainImageUrl = activeItem.imageUrl;
+                    self.activeItemId = activeItem.id;
                 };
 
-                self.showPopOver = function showPopOver(imageUrl) {
+                self.showPopOver = function showPopOver(activeItem) {
                     if (!self.isDetailViewOpen) {
-                        self.mainImageUrl = imageUrl;
+                        self.mainImageUrl = activeItem.imageUrl;
+                        self.activeItemId = activeItem.id;
                         self.popOverIsVisible = true;
                     }
                 }
@@ -36,9 +38,10 @@ angular.
                     }
                 }
 
-                self.setDetailView = function setDetailView(imageUrl) {
+                self.setDetailView = function setDetailView(activeItem) {
+                    self.mainImageUrl = activeItem.imageUrl;
+                    self.activeItemId = activeItem.id;
                     self.isDetailViewOpen = true;
-                    self.mainImageUrl = imageUrl;
                     self.popOverIsVisible = true;
                 }
 

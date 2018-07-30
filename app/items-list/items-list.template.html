@@ -34,9 +34,9 @@
                 <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
                     <li class="thumbnail item-list-item"
                         ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
-                        ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
+                        ng-mouseover="$ctrl.showPopOver(item)"
                         ng-mouseleave="$ctrl.hidePopOver()"
-                        ng-click="$ctrl.setDetailView(item.imageUrl)"
+                        ng-click="$ctrl.setDetailView(item)"
                         style="cursor: pointer;"
                     >
                         <img class="thumb" 
@@ -58,14 +58,18 @@
                         ng-repeat="item in $ctrl.items" 
                         ng-src="{{item.imageUrl}}"
                         ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
+                        ng-show="item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible && item.id === $ctrl.activeItemId"
                         alt="{{item.name}}"
                     />
                 </div>
                 <div class="col-md-9 item item-detail-description"
                     ng-repeat="item in $ctrl.items"
                     ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
-                    ng-show="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
+                    ng-show="item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible && item.id === $ctrl.activeItemId"
                 >
+                    <p>IMAGE: {{$ctrl.mainImageUrl}}</p> 
+                    <p>popovervisibl?.: {{$ctrl.popOverIsVisible}}</p>
+                    <p>iomage same?: {{item.imageUrl === $ctrl.mainImageUrl}}</p>
                     <h4>{{item.name}}</h4>
                     <p>{{item.description}}</p>
                     <p>Added on: {{item.age}}</p>

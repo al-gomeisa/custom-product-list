@@ -59,7 +59,7 @@ angular.
 
 angular.
   module('itemsApp').
-  animation('.item-details', function itemAnimationFactory() {
+  animation('.item-details, item', function itemAnimationFactory() {
     return {
       addClass: animateIn,
       removeClass: animateOut
