@@ -33,6 +33,9 @@
 
 .view-frame {
   margin-top: 20px;
+  width: 90%;
+  border-left: 2px solid #D6D6D6;
+  border-right: 2px solid #D6D6D6;
 }
 
 .view-frame.ng-enter,

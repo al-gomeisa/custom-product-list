@@ -7,6 +7,7 @@ angular.
         templateUrl: 'items-list/items-list.template.html',
         controller: ['Item',
             function ExpListController(Item) {
+               // $('.item-list-item').tooltip();
                 var self = this;
                 var orirginalItemsLength;
                 self.items = Item.query(function (result) {

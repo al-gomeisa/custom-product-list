@@ -38,7 +38,6 @@
                         data-placement="left"
                         title="Please click to select details"
                         onmouseenter="$(this).tooltip('show')"
-                        style="cursor: pointer;"
                     >
                         <img class="thumb" 
                             ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
@@ -46,7 +45,7 @@
                         <h4>{{item.name}}</h4>
                         <p>{{item.description}}</p>
                     </li>
-                </ul>
+                </uk>
             </div>
             
         </div>
@@ -65,21 +64,22 @@
                     <div ng-show="$ctrl.isDetailViewOpen">
                         <div class="form-group">
                             <label for="selectcolor">Select Color:</label>
-                            <select class="form-control" id="selectcolor">
+                            <select class="form-control detail-select" id="selectcolor">
                                 <option value="age">Color 1</option>
                                 <option value="-age">Color 2</option>
                                 <option value="name">Color 3</option>
                                 <option value="description">Color 4</option>
                             </select>
                             <label for="selectsize">Select Size:</label>
-                            <select class="form-control" id="selectsize">
+                            <select class="form-control detail-select" id="selectsize">
                                 <option value="age">Size 1</option>
                                 <option value="-age">Size 2</option>
                                 <option value="name">Size 3</option>
                                 <option value="description">Size 4</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary" type="submit" ng-show="$ctrl.isDetailViewOpen">Add to cart</button>
+                        <button class="btn btn-primary detail-button" type="submit">Add to cart</button>
+                        <button class="btn detail-button" type="button" ng-click="$ctrl.closeDetailView()">Exit</button>
                     </div>
                 </div>
                 <div class="col-md-9 item-detail-description"
