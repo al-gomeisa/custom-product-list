@@ -62,7 +62,7 @@
                         alt="{{item.name}}"
                     />
                 </div>
-                <div class="col-md-9 item item-detail-description"
+                <div class="col-md-9 item-detail-description"
                     ng-repeat="item in $ctrl.items"
                     ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
                     ng-show="item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible && item.id === $ctrl.activeItemId"
