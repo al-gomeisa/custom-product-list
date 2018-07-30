@@ -5,12 +5,17 @@
             <div class="form-group">
                 <label for="search">Search: </label>
                     <input type="text" class="form-control" id="search" ng-model="$ctrl.query" />
+                    <!-- exclude irrerelvant options: https://stackoverflow.com/questions/13814283/angularjs-filter-only-on-certain-objects   -->
             <!--
                 <p>
                     Query: {{$ctrl.query}}
                 </p>
             -->
-
+                <label>Selecting: </label>
+                    <select id="players" ng-model="$ctrl.query" 
+                      ng-options="item.name for item in $ctrl.items | filter:{live:'true'} track by item.id">
+                        <option value="">Select item</option> <!-- check https://stackoverflow.com/questions/36775703/how-to-filter-a-select-with-ng-options -->
+                    </select>
                 <label for="sort">Sort by: </label>
                     <select class="form-control" id="sort" ng-model="$ctrl.orderProp">
                         <option value="age">Newest</option>
