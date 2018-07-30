@@ -12,10 +12,8 @@ angular.
                 self.items = Item.query(function (result) {
                     orirginalItemsLength = result.length;
                     self.itemsLength = result.length;
-                    console.log(result.length, result[0]);
                 });
-              //  var orirginalItemsLength = self.items.length;
-                console.log(orirginalItemsLength, ', self.items: ', self.items[0]);
+                //console.log(orirginalItemsLength, ', self.items: ', self.items[0]);
                 self.title = 'Doing ExpListController on Component';
                 self.orderProp = 'age';
                 self.isDetailViewOpen = false;
@@ -62,30 +60,9 @@ angular.
                     //console.log('orirginalItemsLength:', orirginalItemsLength, self.items[0]);
                     var actualItemsLength = self.items.length;
                     var last = self.items[self.items.length - 1];
-                    console.log('last: ', self.items.length);
-                    var newItem = {
-                        "age": orirginalItemsLength,
-                        "id": "item-" + orirginalItemsLength, 
-                        "imageUrl": "img/phones-" + orirginalItemsLength + ".0.jpg", 
-                        "name": "Item " + (orirginalItemsLength + 1), 
-                        "description": "Description " + (orirginalItemsLength + 1)
-                    };
-
-                  //  self.items.push(newItem);
                     
                     for (var i = 0; i < orirginalItemsLength; i++) {
                        // self.items.push(self.items[i]);
-                        /*
-                        self.items.push(
-                            {
-                                "age": actualItemsLength + i,
-                                "id": "item-" + actualItemsLength + i, 
-                                "imageUrl": "img/phones-" + (actualItemsLength + i) + ".0.jpg", 
-                                "name": "Item " + (actualItemsLength + i + 1), 
-                                "description": "Description " + (actualItemsLength + i + 1)
-                            }
-                        );
-                        */
                         self.items.push(
                             {
                                 "age": actualItemsLength + i,

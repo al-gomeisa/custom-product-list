@@ -31,9 +31,9 @@
             </h3>
             <p>Total number of items: {{$ctrl.items.length}}</p>
             <div style="border-width: 5px; border-style: solid; overflow-y: scroll; height: 700px" class="itemlist-wrapper">
-                <ul class="phones" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
+                <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
                     <li ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
-                        class="thumbnail phone-list-item"
+                        class="thumbnail item-list-item"
                         ng-mouseover="$ctrl.showPopOver(item.imageUrl)"
                         ng-mouseleave="$ctrl.hidePopOver()"
                         ng-click="$ctrl.setDetailView(item.imageUrl)"
@@ -49,17 +49,24 @@
             </div>
             
         </div>
-        <div class="phone-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
+        <div class="item-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
+            <p>Click for settings</p>
             <button class="close" type="button" ng-click="$ctrl.closeDetailView()">×</button>
             <div class="row">
-                <div class="col-md-4">
-                    <img ng-src="{{item.imageUrl}}" class="phone"
+                <div class="col-md-3 item-detail-overview">
+                    <img ng-src="{{item.imageUrl}}" class="item"
                         ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
                         ng-repeat="item in $ctrl.items" 
                     />
                 </div>
-                <div class="col-md-6 item-detail-description">
-                    <p>Click for settings</p>
+                <div class="col-md-9 item-detail-description"
+                    ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
+                    ng-repeat="item in $ctrl.items" 
+                    ng-show="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
+                >
+                    <h4>{{item.name}}</h4>
+                    <p>{{item.description}}</p>
+                    <p>Added on: {{item.age}}</p>
                 </div>
             </div>
         </div>

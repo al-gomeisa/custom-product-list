@@ -2,7 +2,7 @@
 
 angular.
   module('itemsApp').
-  animation('.phone', function phoneAnimationFactory() {
+  animation('.item', function itemAnimationFactory() {
     return {
       addClass: animateIn,
       removeClass: animateOut
@@ -20,8 +20,10 @@ angular.
             top: 200, //-500,
             left: 200 //0
           }).animate({
-            width: 400,
-            height: 400,
+            
+            width: 200, // 800,
+            height: 200, // 400,
+            
             top: 0,
             left:0,
             zIndex: 200
