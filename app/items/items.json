@@ -1,7 +1,7 @@
 [
     {
-        "age": 0, 
-        "id": "item-0", 
+        "age": 1, 
+        "id": "item-1", 
         "imageUrl": "http://placehold.it/225x250&text=Product 1", 
         "name": "Product 1", 
         "brand": "brand A", 
@@ -11,8 +11,8 @@
         "price": "price 1"
     }, 
     {
-        "age": 1, 
-        "id": "item-1", 
+        "age": 2, 
+        "id": "item-2", 
         "imageUrl": "http://placehold.it/225x250&text=Product 2", 
         "name": "Product 2", 
         "brand": "brand B", 
@@ -22,8 +22,8 @@
         "price": "price 2"
     }, 
     {
-        "age": 2, 
-        "id": "item-2", 
+        "age": 3, 
+        "id": "item-3", 
         "imageUrl": "http://placehold.it/225x250&text=Product 3", 
         "name": "Product 3", 
         "brand": "brand A",
@@ -33,9 +33,9 @@
         "price": "price 3"
     }, 
     {
-        "age": 3, 
+        "age": 4, 
         "carrier": "AT&T", 
-        "id": "item-3", 
+        "id": "item-4", 
         "imageUrl": "http://placehold.it/225x250&text=Product 4", 
         "name": "Product 4", 
         "brand": "brand B",
@@ -45,8 +45,8 @@
         "price": "price 4"
     }, 
     {
-        "age": 4, 
-        "id": "item-4", 
+        "age": 5, 
+        "id": "item-5", 
         "imageUrl": "http://placehold.it/225x250&text=Product 5", 
         "name": "Product 5", 
         "brand": "brand C",

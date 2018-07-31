@@ -54,20 +54,20 @@ angular.
                     var actualItemsLength = self.items.length;
                     var last = self.items[self.items.length - 1];
                     
-                    for (var i = 0; i < orirginalItemsLength; i++) {
+                    for (var i = 1; i < orirginalItemsLength; i++) {
                         var idNumber = (actualItemsLength + i);
-                        var productNumbuer = (idNumber + 1);
+                     //   var productNumbuer = (idNumber + 1);
                         self.items.push(
                             {
                                 "age": idNumber,
                                 "id": 'item-' + idNumber, 
-                                "imageUrl": 'http://placehold.it/225x250&text=Product ' + productNumbuer,
-                                "name": 'Product ' + productNumbuer,
+                                "imageUrl": 'http://placehold.it/225x250&text=Product ' + idNumber,
+                                "name": 'Product ' + idNumber,
                                 "brand": self.items[i].brand,
-                                "shortDescription": 'description ' + productNumbuer,
-                                "detailDescription": 'detailDescription ' + productNumbuer,
-                                "added": "date " + productNumbuer,
-                                "price": "price " + productNumbuer
+                                "shortDescription": 'description ' + idNumber,
+                                "detailDescription": 'detailDescription ' + idNumber,
+                                "added": "date " + idNumber,
+                                "price": "price " + idNumber
                             }
                         );
                     }
