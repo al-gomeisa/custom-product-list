@@ -40,8 +40,8 @@ app/                     --> all the source code of the app (along with unit tes
   core/                  --> all the source code of the core module (stuff used throughout the app)
     item/...             --> files for the `core.item` submodule, including JS source code, specs
     core.module.js       --> the core module
-  phone-list/...         --> files for the `phoneList` module, including JS source code, HTML templates, specs
-  phones/...             --> static JSON files with phone data (used to fake a backend API)
+  item-list/...         --> files for the `itemList` module, including JS source code, HTML templates, specs
+  items/...             --> static JSON files with item data (used to fake a backend API)
   app.animations.css     --> hooks for running CSS animations with `ngAnimate`
   app.animations.js      --> hooks for running JS animations with `ngAnimate`
   app.config.js          --> app-wide configuration of Angular services
@@ -63,22 +63,3 @@ bower.json               --> Bower specific metadata, including client-side depe
 karma.conf.js            --> config file for running unit tests with Karma
 package.json             --> Node.js specific metadata, including development tools dependencies
 ```
-
-
-## Contact
-
-For more information on AngularJS, please check out https://angularjs.org/.
-
-
-[angular-seed]: https://github.com/angular/angular-seed
-[bower]: http://bower.io/
-[git-home]: https://git-scm.com/
-[git-setup]: https://help.github.com/articles/set-up-git
-[google-phone-gallery]: http://web.archive.org/web/20131215082038/http://www.android.com/devices
-[jasmine]: https://jasmine.github.io/
-[jdk]: https://wikipedia.org/wiki/Java_Development_Kit
-[jdk-download]: http://www.oracle.com/technetwork/java/javase/downloads
-[karma]: https://karma-runner.github.io/
-[node]: https://nodejs.org/
-[protractor]: http://www.protractortest.org/
-[selenium]: http://docs.seleniumhq.org/
