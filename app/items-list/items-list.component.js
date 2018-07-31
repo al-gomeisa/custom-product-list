@@ -17,6 +17,13 @@ angular.
                 self.orderProp = 'age';
                 self.isDetailViewOpen = false;
                 self.brands = ['Brand A', 'Brand B', 'Brand C'];
+/*
+                self.searchFilter = function searchFilter() {
+                    var re = new RegExp(self.query, 'i');
+
+                    return !self.query || re.test(obj.name) || re.test(obj.age.toString());
+                }
+                */
 
                 self.setListImage = function setListImage(activeItem) {
                     self.mainImageUrl = activeItem.imageUrl;

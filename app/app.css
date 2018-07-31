@@ -8,14 +8,16 @@ h1 {
 }
 
 /* View: items list */
-.phones, .items {
+..items {
   list-style: none;
 }
 
-.phones li, .items li{
+.items li{
   clear: both;
-  height: 115px;
+  height: 50%; /*115px;*/
+  width: 70%;
   padding-top: 15px;
+  margin: 1em;
 }
 
 .thumb {
@@ -27,7 +29,7 @@ h1 {
 }
 
 /* View: item detail */
-.phone, .item {
+.item {
   background-color: white;
   /*display: none;*/
   float: left;
@@ -38,13 +40,7 @@ h1 {
   width: 200px;
 }
 
-/*
-.phone:first-child {
-  display: block;
-}
-*/
-
-.phone-images, .item-images {
+.item-images {
   background-color: white;
   float: left;
   height: 450px;
@@ -53,23 +49,32 @@ h1 {
   width: 800px; /*450px;*/
 }
 
-.phone-thumbs, .item-thumbs {
+.item-thumbs {
   list-style: none;
   margin: 0;
 }
 
-.phone-thumbs img, .item-thumbs img {
+.item-thumbs img {
   height: 100px;
   padding: 1em;
   width: 100px;
 }
 
-.phone-thumbs li, .item-thumbs li {
-  background-color: white;
-  border: 1px solid black;
-  cursor: pointer;
-  display: inline-block;
-  margin: 1em;
+.item-thumbs li {
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    display: inline-block;
+    margin: 1em;
+}
+
+.list-description {
+    margin: 1em;
+    padding-left: 100px;
+}
+
+.detail-contoroller {
+  margin: .5em;
 }
 
 .specs {
@@ -109,8 +114,19 @@ h1 {
     cursor: pointer;
 }
 
-.detail-select, .detail-button {
+.detail-select {
     margin: .5em;
+}
+
+.cart-button {
+    margin-right: 1em;
+}
+
+.itemlist-wrapper {
+    border-width: 5px;
+    border-style: solid;
+    overflow-y: scroll;
+    height: 500px;
 }
 
 .tooltip {

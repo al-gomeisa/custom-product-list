@@ -3,41 +3,56 @@
         "age": 0, 
         "id": "item-0", 
         "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
-        "name": "Item1", 
+        "name": "Product 1", 
         "brand": "brand A", 
-        "description": "Item1 being the first one ON COMPONENT."
+        "shortDescription": "description 1",
+        "detailDescription": "detailDescription1 ",
+        "added": "date 1",
+        "price": "price 1"
     }, 
     {
         "age": 1, 
         "id": "item-1", 
         "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
-        "name": "Motorola XOOM\u2122 with Wi-Fi", 
+        "name": "Product 2", 
         "brand": "brand B", 
-        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "shortDescription": "description 2",
+        "detailDescription": "detailDescription 2",
+        "added": "date 2",
+        "price": "price 2"
     }, 
     {
         "age": 2, 
         "id": "item-2", 
         "imageUrl": "img/phones/motorola-xoom.0.jpg", 
-        "name": "MOTOROLA XOOM\u2122", 
+        "name": "Product 3", 
         "brand": "brand A",
-        "description": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "shortDescription": "description 3",
+        "detailDescription": "detailDescription 3",
+        "added": "date 3",
+        "price": "price 3"
     }, 
     {
         "age": 3, 
         "carrier": "AT&T", 
         "id": "item-3", 
         "imageUrl": "img/phones/motorola-atrix-4g.0.jpg", 
-        "name": "MOTOROLA ATRIX\u2122 4G", 
+        "name": "Product 4", 
         "brand": "brand B",
-        "description": "MOTOROLA ATRIX 4G the world's most powerful smartphone."
+        "shortDescription": "description 4",
+        "detailDescription": "detailDescription 4",
+        "added": "date 4",
+        "price": "price 4"
     }, 
     {
         "age": 4, 
         "id": "item-4", 
         "imageUrl": "img/phones/dell-streak-7.0.jpg", 
-        "name": "Dell Streak 7", 
+        "name": "Product 5", 
         "brand": "brand C",
-        "description": "Introducing Dell\u2122 Streak 7. Share photos, videos and movies together. It\u2019s small enough to carry around, big enough to gather around."
+        "shortDescription": "description 5",
+        "detailDescription": "detailDescription 5",
+        "added": "date 5",
+        "price": "price 5"
     }
 ]

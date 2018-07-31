@@ -26,14 +26,14 @@
                     </select>
             </div>
         </div>
-        <div ng-scrollbars id="itemlist" class="col-md-10 content">
+        <div ng-scrollbars id="itemlist" class="col-md-7 content">
             <!--Body content-->
 
             <h3>
                 {{$ctrl.title}} --Templated
             </h3>
             <p>Total number of items: {{$ctrl.items.length}}</p>
-            <div style="border-width: 5px; border-style: solid; overflow-y: scroll; height: 700px" class="itemlist-wrapper">
+            <div class="itemlist-wrapper">
                 <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
                     <li class="thumbnail item-list-item"
                         ng-repeat="item in $ctrl.items | filter:$ctrl.query | filter:$ctrl.brandsearch | orderBy:$ctrl.orderProp"
@@ -47,14 +47,20 @@
                     >
                         <img class="thumb" 
                             ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
-                         />
-                        <h4>{{item.name}}</h4>
-                        <p>Brand: {{item.brand}}</p>
-                        <p>{{item.description}}</p>
+                        />
+                        <div class="list-description">
+                            <h4>{{item.name}}</h4>
+                            <p>Added on: {{item.added}}</p>
+                            <p>Brand: {{item.brand}}</p>
+                            <p>{{item.shortDescription}}</p>
+                            <p>Price: {{item.price}}</p>
+                        </div>
                     </li>
-                </uk>
+                </ul>
             </div>
-            
+        </div>
+        <div class="col-md-3">
+            <p>Recommended Products:</p>
         </div>
         <div class="item-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
             <button class="close" type="button" title="Close Window" ng-click="$ctrl.closeDetailView()">×</button>
@@ -67,26 +73,28 @@
                         ng-show="item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible && item.id === $ctrl.activeItemId"
                         alt="{{item.name}}"
                     />
-                    <div ng-hide="$ctrl.isDetailViewOpen">Click to Select Details</div>
-                    <div ng-show="$ctrl.isDetailViewOpen">
-                        <div class="form-group">
-                            <label for="selectcolor">Select Color:</label>
-                            <select class="form-control detail-select" id="selectcolor">
-                                <option value="age">Color 1</option>
-                                <option value="-age">Color 2</option>
-                                <option value="name">Color 3</option>
-                                <option value="description">Color 4</option>
-                            </select>
-                            <label for="selectsize">Select Size:</label>
-                            <select class="form-control detail-select" id="selectsize">
-                                <option value="age">Size 1</option>
-                                <option value="-age">Size 2</option>
-                                <option value="name">Size 3</option>
-                                <option value="description">Size 4</option>
-                            </select>
+                    <div class="detail-contoroller">
+                        <div ng-hide="$ctrl.isDetailViewOpen">Click to Select Details</div>
+                        <div ng-show="$ctrl.isDetailViewOpen">
+                            <div class="form-group">
+                                <label for="selectcolor">Select Color:</label>
+                                <select class="form-control detail-select" id="selectcolor">
+                                    <option value="age">Color 1</option>
+                                    <option value="-age">Color 2</option>
+                                    <option value="name">Color 3</option>
+                                    <option value="description">Color 4</option>
+                                </select>
+                                <label for="selectsize">Select Size:</label>
+                                <select class="form-control detail-select" id="selectsize">
+                                    <option value="age">Size 1</option>
+                                    <option value="-age">Size 2</option>
+                                    <option value="name">Size 3</option>
+                                    <option value="description">Size 4</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary cart-button" type="submit">Add to cart</button>
+                            <button class="btn exit-button" type="button" ng-click="$ctrl.closeDetailView()">Exit</button>
                         </div>
-                        <button class="btn btn-primary detail-button" type="submit">Add to cart</button>
-                        <button class="btn detail-button" type="button" ng-click="$ctrl.closeDetailView()">Exit</button>
                     </div>
                 </div>
                 <div class="col-md-9 item-detail-description"
@@ -94,12 +102,10 @@
                     ng-class="{selected: item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible}"
                     ng-show="item.imageUrl === $ctrl.mainImageUrl && $ctrl.popOverIsVisible && item.id === $ctrl.activeItemId"
                 >
-                    <p>IMAGE: {{$ctrl.mainImageUrl}}</p> 
-                    <p>popovervisibl?.: {{$ctrl.popOverIsVisible}}</p>
-                    <p>image same?: {{item.imageUrl === $ctrl.mainImageUrl}}</p>
                     <h4>{{item.name}}</h4>
-                    <p>{{item.description}}</p>
-                    <p>Added on: {{item.age}}</p>
+                    <p>{{item.detailDescription}}</p>
+                    <p>Added on: {{item.added}}</p>
+                    <p>Price: {{item.price}}</p>
                 </div>
             </div>
         </div>
