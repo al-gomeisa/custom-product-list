@@ -27,7 +27,7 @@
             <div class="itemlist-wrapper">
                 <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
                     <li class="thumbnail item-list-item"
-                        ng-repeat="item in $ctrl.items | filter:$ctrl.query | filter:$ctrl.brandsearch | orderBy:$ctrl.orderProp"
+                        ng-repeat="item in $ctrl.items | filter: {name, brand, shortDescription, added, price: $ctrl.query} | filter:$ctrl.brandsearch | orderBy:$ctrl.orderProp"
                     >
                     <div class="row">
                         <div class="col-md-4">

@@ -34,7 +34,6 @@
     }, 
     {
         "age": 4, 
-        "carrier": "AT&T", 
         "id": "item-4", 
         "imageUrl": "http://placehold.it/225x250&text=Product 4", 
         "name": "Product 4", 
