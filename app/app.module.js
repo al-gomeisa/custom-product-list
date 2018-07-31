@@ -7,13 +7,5 @@ angular.module('itemsApp', [
     'infinite-scroll',
     'angular.filter',
     'core',
-    'itemDetail',
     'itemsList'
-/*
-  'ngAnimate',
-  'ngRoute',
-  'core',
-  'phoneDetail',
-  'phoneList'
-  */
 ]);
