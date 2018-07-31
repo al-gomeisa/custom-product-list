@@ -26,6 +26,7 @@ The application is loosely based on the **Google Phone Gallery** tutorial, found
 - Get [Node.js][node].
 - Install the tool dependencies: `npm install`
 
+- After `npm install` please run `npm start`, then aplication will run on browser under http://localhost:8000
 
 ### Installing Dependencies
 
