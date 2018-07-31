@@ -50,7 +50,7 @@ button:focus {
   height: 450px;
   overflow: hidden;
   position: relative;
-  width: 800px; /*450px;*/
+  width: 800px;
 }
 
 .item-thumbs {
@@ -166,16 +166,6 @@ button:focus {
 
 #itemlist {
     z-index: 10;
-}
-
-.tooltip {
-    /*
-    height: 10px;
-    background-color: #73AD21; 
-    color: #FFFFFF; 
-    border: 1px solid green;
-    padding: 5px;
-    font-size: 20px;*/
 }
 
 ::-webkit-scrollbar {
