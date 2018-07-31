@@ -13,7 +13,7 @@ angular.
                     orirginalItemsLength = result.length;
                     self.itemsLength = result.length;
                 });
-                self.title = 'Doing ExpListController on Component';
+                self.title = 'Our Poduction List';
                 self.orderProp = 'age';
                 self.isDetailViewOpen = false;
                 self.brands = ['Brand A', 'Brand B', 'Brand C'];

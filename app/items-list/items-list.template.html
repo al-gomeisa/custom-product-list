@@ -4,7 +4,7 @@
         <!--Sidebar content-->
             <div class="form-group">
                 <label for="search">Search: </label>
-                    <input type="text" class="form-control" id="search" ng-model="$ctrl.query" />
+                    <input type="text" class="form-control main-input" id="search" ng-model="$ctrl.query" />
                     <!-- exclude irrerelvant options: https://stackoverflow.com/questions/13814283/angularjs-filter-only-on-certain-objects   -->
             <!--
                 <p>
@@ -14,12 +14,12 @@
                 <label for="brand">Filter by Brand: </label>
                     <!-- <select class="form-control" id="brand" ng-model="$ctrl.brandsearch" 
                       ng-options="item.brand for item in $ctrl.items "> -->
-                    <select class="form-control" id="brand" ng-model="$ctrl.brandsearch" >
+                    <select class="form-control main-input" id="brand" ng-model="$ctrl.brandsearch" >
                         <option value="">All</option>
                         <option value="{{brand}}" ng-repeat="brand in $ctrl.brands">{{brand}}</option>
                     </select>
                 <label for="sort">Sort by: </label>
-                    <select class="form-control" id="sort" ng-model="$ctrl.orderProp">
+                    <select class="form-control main-input" id="sort" ng-model="$ctrl.orderProp">
                         <option value="age">Newest</option>
                         <option value="-age">Oldest</option>
                         <option value="name">Name</option>
@@ -30,7 +30,7 @@
             <!--Body content-->
 
             <h3>
-                {{$ctrl.title}} --Templated
+                {{$ctrl.title}}
             </h3>
             <p>Total number of items: {{$ctrl.items.length}}</p>
             <div class="itemlist-wrapper">
@@ -75,12 +75,12 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div>Sign In/Sign Up</div>
-            <div>Your Cart:</div>
-            <div>Recommended Products:</div>
+            <div class="right-side-box sign">Sign In/Sign Up</div>
+            <div class="right-side-box">Your Cart:</div>
+            <div class="right-side-box">Recommended Products:</div>
         </div>
         <div class="item-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
-            <button class="close" type="button" title="Close Window" ng-click="$ctrl.closeDetailView()">×</button>
+            <button class="close close-button" type="button" title="Close Window" ng-click="$ctrl.closeDetailView()">×</button>
             <div class="row">
                 <div class="col-md-3 item-detail-overview">
                     <img class="item"
@@ -95,14 +95,14 @@
                         <div ng-show="$ctrl.isDetailViewOpen">
                             <div class="form-group">
                                 <label for="selectcolor">Select Color:</label>
-                                <select class="form-control detail-select" id="selectcolor">
+                                <select class="form-control detail-select main-input" id="selectcolor">
                                     <option value="age">Color 1</option>
                                     <option value="-age">Color 2</option>
                                     <option value="name">Color 3</option>
                                     <option value="description">Color 4</option>
                                 </select>
                                 <label for="selectsize">Select Size:</label>
-                                <select class="form-control detail-select" id="selectsize">
+                                <select class="form-control detail-select main-input" id="selectsize">
                                     <option value="age">Size 1</option>
                                     <option value="-age">Size 2</option>
                                     <option value="name">Size 3</option>
