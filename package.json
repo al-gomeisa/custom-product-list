@@ -1,9 +1,9 @@
 {
-    "name": "angular-phonecat",
+    "name": "Custom Product List",
     "private": true,
     "version": "0.0.0",
-    "description": "A tutorial application for AngularJS",
-    "repository": "https://github.com/angular/angular-phonecat",
+    "description": "A basic 'product listing page' using modern webdesign",
+    "repository": "https://github.com/al-gomeisa/custom-product-list",
     "license": "MIT",
     "devDependencies": {
         "bower": "^1.7.7",

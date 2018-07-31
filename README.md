@@ -16,17 +16,11 @@ The application is loosely based on the **Google Phone Gallery** tutorial, found
 
 ## Prerequisites
 
-### Git
-
-- A good place to learn about setting up git is [here][git-setup].
-- You can find documentation and download git [here][git-home].
-
 ### Node.js and Tools
 
-- Get [Node.js][node].
-- Install the tool dependencies: `npm install`
+- After cloning this repository, please install the tool dependencies: `npm install`
 
-- After `npm install` please run `npm start`, then aplication will run on browser under http://localhost:8000
+- After `npm install` please run `npm start`, then aplication will be available on browser under http://localhost:8000
 
 ### Installing Dependencies
 
@@ -50,17 +44,8 @@ app/                     --> all the source code of the app (along with unit tes
   app.module.js          --> the main app module
   index.html             --> app layout file (the main HTML template file of the app)
 
-e2e-tests/               --> config and source files for e2e tests
-  protractor.conf.js     --> config file for running e2e tests with Protractor
-  scenarios.js           --> e2e specs
-
 node_modules/...         --> development tools (fetched using `npm`)
 
-scripts/                 --> handy scripts
-  private/...            --> private scripts used by the Angular Team to maintain this repo
-  update-repo.sh         --> script for pulling down the latest version of this repo (!!! DELETES ALL CHANGES YOU HAVE MADE !!!)
-
 bower.json               --> Bower specific metadata, including client-side dependencies
-karma.conf.js            --> config file for running unit tests with Karma
 package.json             --> Node.js specific metadata, including development tools dependencies
 ```
