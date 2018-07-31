@@ -67,7 +67,7 @@
   opacity: 0;
   position: fixed;
   top: 50%;
-  left: 60%; /*50%;*/
+  left: 65%; /*50%;*/
   z-index: 0;
   animation: .3s fade-out;
   /* bring your own prefixes */

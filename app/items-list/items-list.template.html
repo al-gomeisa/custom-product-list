@@ -37,30 +37,42 @@
                 <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
                     <li class="thumbnail item-list-item"
                         ng-repeat="item in $ctrl.items | filter:$ctrl.query | filter:$ctrl.brandsearch | orderBy:$ctrl.orderProp"
-                        ng-mouseover="$ctrl.showPopOver(item)"
-                        ng-mouseleave="$ctrl.hidePopOver()"
-                        ng-click="$ctrl.setDetailView(item)"
-                        data-toggle="tooltip"
-                        data-placement="left"
-                        title="Please click to select details"
-                        onmouseenter="$(this).tooltip('show')"
                     >
-                        <img class="thumb" 
-                            ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
-                        />
-                        <div class="list-description">
-                            <h4>{{item.name}}</h4>
-                            <p>Added on: {{item.added}}</p>
-                            <p>Brand: {{item.brand}}</p>
-                            <p>{{item.shortDescription}}</p>
-                            <p>Price: {{item.price}}</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="thumb" 
+                                ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
+                            />
+                            <button class=" button show-details"
+                                ng-mouseover="$ctrl.showPopOver(item)"
+                                ng-mouseleave="$ctrl.hidePopOver()"
+                                ng-click="$ctrl.setDetailView(item)"
+                                data-toggle="tooltip"
+                                data-placement="left"
+                                title="Please click to select details"
+                                onmouseenter="$(this).tooltip('show')"
+                            >
+                                Show Details
+                            </button>
                         </div>
+                        <div class="col-md-8">
+                            <div class="list-description">
+                                <h4>{{item.name}}</h4>
+                                <p>Added on: {{item.added}}</p>
+                                <p>Brand: {{item.brand}}</p>
+                                <p>{{item.shortDescription}}</p>
+                                <p>Price: {{item.price}}</p>
+                            </div>
+                        </div>
+                    </div>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-md-3">
-            <p>Recommended Products:</p>
+            <div>Sign In/Sign Up</div>
+            <div>Your Cart:</div>
+            <div>Recommended Products:</div>
         </div>
         <div class="item-images item-details item-popover" ng-class="{selected: $ctrl.popOverIsVisible, 'detail-active': $ctrl.isDetailViewOpen}">
             <button class="close" type="button" title="Close Window" ng-click="$ctrl.closeDetailView()">×</button>

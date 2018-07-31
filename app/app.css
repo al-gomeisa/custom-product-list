@@ -7,6 +7,10 @@ h1 {
   margin-top: 0;
 }
 
+button:focus {
+    outline:0;
+}
+
 /* View: items list */
 ..items {
   list-style: none;
@@ -70,7 +74,6 @@ h1 {
 
 .list-description {
     margin: 1em;
-    padding-left: 100px;
 }
 
 .detail-contoroller {
@@ -127,6 +130,18 @@ h1 {
     border-style: solid;
     overflow-y: scroll;
     height: 500px;
+}
+
+.show-details {
+    border: none;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-style: italic;
+}
+
+#itemlist {
+    z-index: 10;
 }
 
 .tooltip {
