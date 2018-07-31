@@ -11,17 +11,18 @@
                     Query: {{$ctrl.query}}
                 </p>
             -->
-                <label>Selecting: </label>
-                    <select id="players" ng-model="$ctrl.query" 
-                      ng-options="item.name for item in $ctrl.items | filter:{live:'true'} track by item.id">
-                        <option value="">Select item</option> <!-- check https://stackoverflow.com/questions/36775703/how-to-filter-a-select-with-ng-options -->
+                <label for="brand">Filter by Brand: </label>
+                    <!-- <select class="form-control" id="brand" ng-model="$ctrl.brandsearch" 
+                      ng-options="item.brand for item in $ctrl.items "> -->
+                    <select class="form-control" id="brand" ng-model="$ctrl.brandsearch" >
+                        <option value="">All</option>
+                        <option value="{{brand}}" ng-repeat="brand in $ctrl.brands">{{brand}}</option>
                     </select>
                 <label for="sort">Sort by: </label>
                     <select class="form-control" id="sort" ng-model="$ctrl.orderProp">
                         <option value="age">Newest</option>
                         <option value="-age">Oldest</option>
-                        <option value="name">Alphabetical-Name</option>
-                        <option value="description">Alphabetical - Description</option>
+                        <option value="name">Name</option>
                     </select>
             </div>
         </div>
@@ -35,7 +36,7 @@
             <div style="border-width: 5px; border-style: solid; overflow-y: scroll; height: 700px" class="itemlist-wrapper">
                 <ul class="items" infinite-scroll="$ctrl.loadMoreItems()" infinite-scroll-parent="true" >
                     <li class="thumbnail item-list-item"
-                        ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+                        ng-repeat="item in $ctrl.items | filter:$ctrl.query | filter:$ctrl.brandsearch | orderBy:$ctrl.orderProp"
                         ng-mouseover="$ctrl.showPopOver(item)"
                         ng-mouseleave="$ctrl.hidePopOver()"
                         ng-click="$ctrl.setDetailView(item)"
@@ -48,6 +49,7 @@
                             ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
                          />
                         <h4>{{item.name}}</h4>
+                        <p>Brand: {{item.brand}}</p>
                         <p>{{item.description}}</p>
                     </li>
                 </uk>
@@ -94,7 +96,7 @@
                 >
                     <p>IMAGE: {{$ctrl.mainImageUrl}}</p> 
                     <p>popovervisibl?.: {{$ctrl.popOverIsVisible}}</p>
-                    <p>iomage same?: {{item.imageUrl === $ctrl.mainImageUrl}}</p>
+                    <p>image same?: {{item.imageUrl === $ctrl.mainImageUrl}}</p>
                     <h4>{{item.name}}</h4>
                     <p>{{item.description}}</p>
                     <p>Added on: {{item.age}}</p>

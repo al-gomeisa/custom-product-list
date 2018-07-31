@@ -13,11 +13,10 @@ angular.
                     orirginalItemsLength = result.length;
                     self.itemsLength = result.length;
                 });
-                //console.log(orirginalItemsLength, ', self.items: ', self.items[0]);
                 self.title = 'Doing ExpListController on Component';
                 self.orderProp = 'age';
                 self.isDetailViewOpen = false;
-                self.demoImages = [1, 2, 3, 4, 5, 6, 7, 8];
+                self.brands = ['Brand A', 'Brand B', 'Brand C'];
 
                 self.setListImage = function setListImage(activeItem) {
                     self.mainImageUrl = activeItem.imageUrl;
@@ -50,15 +49,6 @@ angular.
                     self.popOverIsVisible = false;
                 }
 
-                self.loadMore = function loadMore() {
-                    console.log('LoadmoreDEFA');
-                    var last = self.demoImages[self.demoImages.length - 1];
-
-                    for (var i = 1; i <= 8; i++) {
-                      self.demoImages.push(last + i);
-                    }
-                };
-
                 self.loadMoreItems = function loadMoreItems() {
                     //console.log('orirginalItemsLength:', orirginalItemsLength, self.items[0]);
                     var actualItemsLength = self.items.length;
@@ -72,6 +62,7 @@ angular.
                                 "id": "item-" + actualItemsLength + i, 
                                 "imageUrl": self.items[i].imageUrl,
                                 "name": self.items[i].name,
+                                "brand": self.items[i].brand,
                                 "description": self.items[i].description
                             }
                         );

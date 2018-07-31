@@ -5,6 +5,7 @@ angular.module('itemsApp', [
     'ngAnimate',
     'ngRoute',
     'infinite-scroll',
+    'angular.filter',
     'core',
     'itemDetail',
     'itemsList'
