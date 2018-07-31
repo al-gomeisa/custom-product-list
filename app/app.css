@@ -67,7 +67,6 @@ button:focus {
 .item-thumbs li {
     background-color: white;
     border: 1px solid black;
-    cursor: pointer;
     display: inline-block;
     margin: 1em;
 }
@@ -113,10 +112,6 @@ button:focus {
   height: 450px;
 }
 
-.item-list-item {
-    cursor: pointer;
-}
-
 .detail-select {
     margin: .5em;
 }
@@ -126,13 +121,17 @@ button:focus {
 }
 
 .itemlist-wrapper {
-    border-width: 5px;
+    border-width: 4px;
+    border-color: rgba(100, 100, 100, .3);
     border-style: solid;
-    overflow-y: scroll;
+    border-radius: 2%;
     height: 500px;
+    box-shadow: 0.4em 0.4em 5px 0.5px grey;
+    overflow-y: scroll;
 }
 
 .show-details {
+    cursor: pointer;
     border: none;
     text-decoration: none;
     border-radius: 50%;

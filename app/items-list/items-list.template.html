@@ -43,14 +43,19 @@
                             <img class="thumb" 
                                 ng-src="{{item.imageUrl}}" alt="{{item.name}}" 
                             />
-                            <button class=" button show-details"
+                            <!-- <button class=" button show-details"
                                 ng-mouseover="$ctrl.showPopOver(item)"
                                 ng-mouseleave="$ctrl.hidePopOver()"
                                 ng-click="$ctrl.setDetailView(item)"
                                 data-toggle="tooltip"
-                                data-placement="left"
+                                data-placement="top"
                                 title="Please click to select details"
                                 onmouseenter="$(this).tooltip('show')"
+                            > -->
+                            <button class=" button show-details"
+                                ng-mouseover="$ctrl.showPopOver(item)"
+                                ng-mouseleave="$ctrl.hidePopOver()"
+                                ng-click="$ctrl.setDetailView(item)"
                             >
                                 Show Details
                             </button>
